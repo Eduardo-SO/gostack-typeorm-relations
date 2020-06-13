@@ -22,7 +22,7 @@ class CreateProductService {
     const findProductByName = this.productsRepository.findByName(name);
 
     if (findProductByName) {
-      throw new AppError('This product does not exist');
+      throw new AppError('This product already exist');
     }
 
     const product = this.productsRepository.create({
