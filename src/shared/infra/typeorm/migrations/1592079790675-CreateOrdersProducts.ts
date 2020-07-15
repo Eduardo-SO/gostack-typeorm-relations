@@ -54,11 +54,11 @@ export default class CreateOrdersProducts1592079790675
     );
 
     await queryRunner.createForeignKey(
-      'orders',
+      'orders_products',
       new TableForeignKey({
-        name: 'OrdersCustomersOrder',
+        name: 'OrdersProductsProduct',
         columnNames: ['product_id'],
-        referencedTableName: 'customers',
+        referencedTableName: 'products',
         referencedColumnNames: ['id'],
         onDelete: 'SET NULL',
         onUpdate: 'CASCADE',
@@ -66,7 +66,7 @@ export default class CreateOrdersProducts1592079790675
     );
 
     await queryRunner.createForeignKey(
-      'orders',
+      'orders_products',
       new TableForeignKey({
         name: 'OrdersProductsOrder',
         columnNames: ['order_id'],
