@@ -79,6 +79,13 @@ export default class CreateOrdersProducts1592079790675
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.dropForeignKey('orders_products', 'OrdersProductsOrder');
+
+    await queryRunner.dropForeignKey(
+      'orders_products',
+      'OrdersProductsProduct',
+    );
+
     await queryRunner.dropTable('orders_products');
   }
 }
