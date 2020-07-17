@@ -31,7 +31,6 @@ class CreateProductService {
   ) {}
 
   public async execute({ customer_id, products }: IRequest): Promise<Order> {
-    // TODO
     const customerExists = await this.customersRepository.findById(customer_id);
 
     if (!customerExists) {

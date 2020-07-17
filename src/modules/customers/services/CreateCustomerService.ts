@@ -18,8 +18,6 @@ class CreateCustomerService {
   ) {}
 
   public async execute({ name, email }: IRequest): Promise<Customer> {
-    // TODO
-
     const findCustomerWithSameEmail = await this.customersRepository.findByEmail(
       email,
     );
